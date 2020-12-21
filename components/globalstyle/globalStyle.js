@@ -9,8 +9,8 @@ export const globalStyles = StyleSheet.create({
   errorText: {
     color: 'crimson',
     fontWeight: 'bold',
-    marginBottom: 10,
-    marginTop: 6,
+    marginBottom: 1,
+    marginTop: 1,
     textAlign: 'center',
   },
 });

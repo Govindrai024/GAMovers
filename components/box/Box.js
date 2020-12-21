@@ -9,7 +9,7 @@ export default function Box({titletext}) {
 
   const styles = StyleSheet.create({
     body: {
-      height: windowHeight * 0.30,
+      height: windowHeight * 0.26,
       backgroundColor: colors.headerBackground,
       borderBottomRightRadius: 65,
       alignItems: "center",

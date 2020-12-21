@@ -38,9 +38,9 @@ export default function Login({ navigation }) {
           <View style={loginStyles.body}>
              
             <View style={{ flex: 1, marginTop: 90 }}>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator ={false}>
               <Formik
-                initialValues={{ title: "", body: "" }}
+                initialValues={{ email: "", password: "" }}
                 validationSchema={loginSchema}
                 onSubmit={ () => navigation.navigate("Home")
                 }
@@ -88,7 +88,7 @@ export default function Login({ navigation }) {
                     <Button
                       mode="text"
                       style={{ width: 260, marginTop: 10 }}
-                      onPress={() => navigation.navigate("SignUp")}
+                      onPress={() => navigation.navigate("Signup")}
                       color="#04446b"
                       uppercase="false"
                       labelStyle={{ fontSize: 12 }}
