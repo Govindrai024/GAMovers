@@ -31,7 +31,7 @@ const windowHeight = Dimensions.get("window").height;
     },
     buttonChanges: {
       marginTop:30,
-      maringButtom:2,
+      marginBottom:2,
     }
   });
 

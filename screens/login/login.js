@@ -1,94 +1,109 @@
-import React, { useState} from 'react';
-import {  Text, View, TouchableOpacity,Image } from 'react-native';
+import React from "react";
+import { StyleSheet,View, TouchableWithoutFeedback,Keyboard,ScrollView,Text,} from "react-native";
+import { TextInput } from "react-native-paper";
+import { Formik } from "formik";
+import * as yup from "yup";
+import { Button, useTheme } from "react-native-paper";
+import { globalStyles } from "../../components/globalstyle/globalStyle";
+import  loginStyles  from "./loginStyle"
+import Box from "../../components/box/Box";
+import Container from "../../components/container/Container";
 
-//Components
-import FormInput from '../../components/FormInput';
-import FormButton from '../../components/FormButton';
-import SocialButton from '../../components/SocialButton'; 
 
-//Style
-import styles  from "./loginStyle";
+const loginSchema = yup.object().shape({
+  email: yup.string().email('Invalid email').required('Required'),
+  password: yup
+    .string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+});
 
-
-import AntDesign from 'react-native-vector-icons/AntDesign'
-
-const LoginScreen = () => {
-  const [email,setEmail] =  useState();
-  const [password,setPassword] =  useState();
+export default function Login({ navigation }) {
+  const { colors } = useTheme();
+  
 
   return (
-
-    <View style={styles.container}>
-      <Image 
-        source= {require('../../assets/logo.jpg')}
-        style={styles.logo}
-        />
-        <Text style={styles.text}>
-        GA Movers</Text>
-
-        <FormInput 
-            labelValue={email}
-            onChangeText={(userEmail) => setEmail(userEmail)}
-            placeholderText= "Email"
-            iconType="user"
-            keyboardType="email-address" 
-            autoCapitalize="none"
-            autoCorrect={false}
+    <Container>
+      <Box titletext="LOGIN" />
+      <View style={loginStyles.header}>
+        <View
+          style={{
+            ...StyleSheet.absoluteFillObject,
+            backgroundColor: colors.headerBackground,
+          }}
         />
 
-        
-        <FormInput 
-            labelValue={password}
-            onChangeText={(userPassword) => setPassword(userPassword)}
-            placeholderText= "Passwordl"
-            iconType="lock"
-            secureTextEntry={true}
-         />
+        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+          <View style={loginStyles.body}>
+             
+            <View style={{ flex: 1, marginTop: 90 }}>
+            <ScrollView>
+              <Formik
+                initialValues={{ title: "", body: "" }}
+                validationSchema={loginSchema}
+                onSubmit={ () => navigation.navigate("Home")
+                }
+              >
+                {({ handleChange, handleBlur, handleSubmit, values,errors, touched,
+                }) => (
+                  <View>
+                    <TextInput
+                      style={loginStyles.input}
+                      labelName="Email"
+                      onChangeText={handleChange("email")}
+                      onBlur={handleBlur("email")}
+                      value={values.email}
+                      autoCapitalize="none"
+                      placeholder="Enter Email"
+                      left={<TextInput.Icon style={loginStyles.InputIcon}name="email" />}
+                    />
+                    {errors.email && touched.email ? (
+                      <Text style={globalStyles.errorText}>{errors.email}</Text>
+                    ) : null}
 
-         <FormButton
-            buttonTitle="Sign in"
-            onPress={() => navigation.navigate("Home")}  
+                    <TextInput
+                      style={loginStyles.input}
+                      labelName="Password"
+                      onChangeText={handleChange("password")}
+                      onBlur={handleBlur("password")}
+                      value={values.password}
+                      autoCapitalize="none"
+                      placeholder="Enter Password"
+                      secureTextEntry={true}
+                      left={<TextInput.Icon style={loginStyles.InputIcon} name="lock"/> }
+                    />
+                    {errors.password && touched.password ? (
+                      <Text style={globalStyles.errorText}>{errors.password}</Text>
+                    ) : null}
 
-         />
-
-         <TouchableOpacity style={styles.forgetButton} onPress={() => alert('pressed')}>
-           <Text style={styles.navButtonText}> Forget password? </Text>
-         </TouchableOpacity>
-
-          <SocialButton 
-            buttonTitle="Sign in with Facebook"
-            btnType="facebook"
-            color="#fff"
-            backgroundColor="#5583ed"
-            onPress={() => alert("wellcome to facebook")}
-
-          />
-
-          <SocialButton 
-            buttonTitle="Sign in with google"
-            btnType="google"
-            color="#f23e0c"
-            backgroundColor="#d3e0d6"
-            onPress={() => alert("wellcome to google")}
-
-          />
-
-         <TouchableOpacity 
-         style= {styles.forgetButton}
-         onPress={() => navigation.navigate('about')}
-         >
-         <Text style={styles.navButtonText}
-          onPress={() => alert("wellcome ")}>
-          Don't have an account? Create here
-         </Text>
-
-         </TouchableOpacity>
-
-
-    </View>
-
+                    <Button
+                      mode="outlined"
+                      onPress={handleSubmit}
+                      style={{ width: 120, marginLeft: 66, marginTop: 10 }}
+                      color="#04446b"
+                    >
+                      Login
+                    </Button>
+                    <Button
+                      mode="text"
+                      style={{ width: 260, marginTop: 10 }}
+                      onPress={() => navigation.navigate("SignUp")}
+                      color="#04446b"
+                      uppercase="false"
+                      labelStyle={{ fontSize: 12 }}
+                    >
+                      Don't have Account ?
+                    </Button>
+                  </View>
+                )}
+              </Formik>
+              </ScrollView>
+            </View>
+      
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
+    </Container>
   );
 }
-
-export default LoginScreen 
-
