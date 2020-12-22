@@ -13,6 +13,8 @@ import Signup from './screens/signup/SignupScreen'
 import About from './screens/about/about'
 import BookingForm from "./screens/bookingForm/bookingForm";
 import BookingForm2 from "./screens/bookingForm2/bookingForm";
+import Profile from "./screens/profile/profile";
+import CreateEmployee from "./screens/createEmployee/createEmployee";
 
 
 //Utilities                                                                  
@@ -73,15 +75,32 @@ const StackNavigator = () => {
 
           }}
         /> */}
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Booking Form"
           component={BookingForm2}
           options={{
             headerShown: true,
 
           }}
-        />
+        /> */}
+
+        {/* <Stack.Screen
+          name="Profile "
+          component={Profile}
+          options={{
+            headerShown: true,
+
+          }}
+        /> */}
         
+        <Stack.Screen
+          name="Profile"
+          component={CreateEmployee}
+          options={{
+            headerShown: true,
+
+          }}
+        />
    
 
       </Stack.Navigator>
