@@ -10,7 +10,9 @@ import Home from './screens/home/home'
 import Welcome from './screens/welcome/Welcome'
 import Login from './screens/login/login'
 import Signup from './screens/signup/SignupScreen'
-// import About from './screen/about'
+import About from './screens/about/about'
+import BookingForm from "./screens/bookingForm/bookingForm";
+import BookingForm2 from "./screens/bookingForm2/bookingForm";
 
 
 //Utilities                                                                  
@@ -24,7 +26,7 @@ const StackNavigator = () => {
         screenOptions={{
           headerTitleAlign: 'center',
           headerStyle: {
-            backgroundColor: '#f4511e',
+            backgroundColor: '#56ab2f',
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
@@ -33,35 +35,55 @@ const StackNavigator = () => {
         }}
 
       >
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Welcome"
           component={Welcome}
           options={{
             headerShown: false,
           }}
-        />
-        <Stack.Screen
+        /> */}
+        {/* <Stack.Screen
           name="Login"
           component={Login}
           options={{
             headerShown: false,
           }}
-        />
-        <Stack.Screen
+        /> */}
+        {/* <Stack.Screen
           name="Signup"
           component={Signup}
           options={{
             headerShown: false,
           }}
-        />
-        <Stack.Screen
+        /> */}
+        {/* <Stack.Screen
           name="Home"
           component={Home}
           options={{
             headerShown: true,
 
           }}
+        /> */}
+
+        {/* <Stack.Screen
+          name="Booking Form"
+          component={BookingForm}
+          options={{
+            headerShown: true,
+
+          }}
+        /> */}
+        <Stack.Screen
+          name="Booking Form"
+          component={BookingForm2}
+          options={{
+            headerShown: true,
+
+          }}
         />
+        
+   
+
       </Stack.Navigator>
   )
 }

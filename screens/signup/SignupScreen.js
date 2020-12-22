@@ -36,7 +36,7 @@ export default function Signup({ navigation }) {
 
   return (
     <Container>
-      <Box titletext="LOGIN" />
+      <Box titletext="SIGNUP"/>
       <View style={signupStyles.header}>
         <View
           style={{
