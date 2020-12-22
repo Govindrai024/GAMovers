@@ -14,6 +14,7 @@ import About from './screens/about/about'
 import BookingForm from "./screens/bookingForm/bookingForm";
 import BookingForm2 from "./screens/bookingForm2/bookingForm";
 import Profile from "./screens/profile/profile";
+import UserProfile from "./screens/UserProfile/UserProfile";
 import CreateEmployee from "./screens/createEmployee/createEmployee";
 
 
@@ -95,13 +96,13 @@ const StackNavigator = () => {
         
         <Stack.Screen
           name="Profile"
-          component={CreateEmployee}
+          component={UserProfile}
           options={{
             headerShown: true,
 
           }}
         />
-   
+
 
       </Stack.Navigator>
   )
