@@ -20,7 +20,7 @@ export default function InputBOx({ navigation }) {
             <ScrollView>
               
                   <View>
-                    {/* <TextInput
+                    <TextInput
                       style={styles.input}
                       labelName="facebook"
                       autoCapitalize="none"
@@ -32,7 +32,7 @@ export default function InputBOx({ navigation }) {
                       name="facebook" 
                         
                       />}
-                    /> */}
+                    />
                
                   </View>
               </ScrollView>

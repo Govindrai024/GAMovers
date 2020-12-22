@@ -16,6 +16,7 @@ import BookingForm2 from "./screens/bookingForm2/bookingForm";
 import Profile from "./screens/profile/profile";
 import UserProfile from "./screens/UserProfile/UserProfile";
 import CreateEmployee from "./screens/createEmployee/createEmployee";
+import ContactUs from "./screens/contactUs/ContactUS";
 
 
 //Utilities                                                                  
@@ -102,6 +103,15 @@ const StackNavigator = () => {
 
           }}
         />
+
+        {/* <Stack.Screen
+          name="Contact Us"
+          component={ContactUs}
+          options={{
+            headerShown: true,
+
+          }}
+        /> */}
 
 
       </Stack.Navigator>

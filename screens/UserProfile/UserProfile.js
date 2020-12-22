@@ -9,12 +9,12 @@ const UserProfile = () => {
     <View style={styles.root}>
         <LinearGradient
             colors={['#1c69e6','#5691f0']}
-            style={{height:'30%'}}
+            style={{height:'20%'}}
         />
 
         <View style={{alignItems:"center"}}>
         <Image
-            style={{width:100,height:100,borderRadius:170/2,marginTop:-50}}
+            style={{width:100,height:100,borderRadius:170/3,marginTop:-50}}
             source={{uri:"https://pbs.twimg.com/profile_images/1225687863439712256/wFtOuQx8_400x400.jpg"}}
         />
         </View>
@@ -50,14 +50,15 @@ const UserProfile = () => {
             </View>
         </Card>
 
-
+        
         <Card style={styles.myCard}>
             <View style={styles.cardContent}>
             <MaterialIcons
-                    name="attach-money" size={32} color="blue" />
+                    name="attach-money" size={32} color="blue"/>
                 <Text style={styles.mytext}>Rs: 2 LPA</Text>
             </View>
         </Card>
+        
         
         <View style={{flexDirection:"row", justifyContent:"space-around",padding:15}}>
         <Button 
@@ -92,7 +93,8 @@ const styles = StyleSheet.create({
         flex:1
     },
     myCard:{
-        margin:3
+        margin:3,
+        
     },
     cardContent:{
         flexDirection:'row',
