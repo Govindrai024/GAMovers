@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
         position:"absolute",
         bottom:2,
         width:"100%",
-        BackgoundColor:"#03fcf0"
+        // backgoundColor:"#03fcf0"
     }
 })
 export default CreateEmployee

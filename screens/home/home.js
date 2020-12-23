@@ -14,24 +14,24 @@ const Home = ({ navigation }) => {
       <Button
         mode="contained"
         onPress={() => navigation.navigate("BookingForm")}
-        style={{ width: 120, marginLeft: 66, marginTop: 10 }}
-        color={colors}
+        style={{ width: 200, marginTop: 10 }}
+        color = '#04446b'
       >
         Go To Booking
       </Button>
       <Button
         mode="contained"
         onPress={() => navigation.navigate("ContactUs")}
-        style={{ width: 120, marginLeft: 66, marginTop: 10 }}
-        color={colors}
+        style={{ width: 150, marginTop: 10 }}
+        color = '#04446b'
       >
         Contact Us
       </Button>
       <Button
         mode="contained"
         onPress={() => navigation.navigate("Profile")}
-        style={{ width: 120, marginLeft: 66, marginTop: 10 }}
-        color={colors}
+        style={{ width: 150, marginTop: 10 }}
+        color = '#04446b'
       >
         Profile
       </Button>

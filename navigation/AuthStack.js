@@ -1,82 +1,141 @@
-import React, {useState, useEffect} from 'react';
-import {View} from 'react-native';
-import {createStackNavigator} from '@react-navigation/stack';
-import SignupScreen from '../screens/SignupScreen';
-import LoginScreen from '../screens/LoginScreen';
-import OnboardingScreen from '../screens/OnboardingScreen';
-
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-
-import AsyncStorage from '@react-native-community/async-storage';
-import { GoogleSignin } from '@react-native-community/google-signin';
-
+import React from 'react';
+import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Ionicons } from "@expo/vector-icons";
+import Welcome from '../screens/welcome/Welcome'
+import Login from '../screens/login/login'
+import Signup from '../screens/signup/SignupScreen'
+import Home from '../screens/home/home'
+import BookingForm from '../screens/bookingForm/bookingForm'
+import ContactUS from '../screens/contactUs/ContactUS'
+import ContactUs from '../screens/contactUs/ContactUS';
 const Stack = createStackNavigator();
 
-const AuthStack = () => {
-  const [isFirstLaunch, setIsFirstLaunch] = useState(null);
-  let routeName;
 
-  useEffect(() => {
-    AsyncStorage.getItem('alreadyLaunched').then((value) => {
-      if (value == null) {
-        AsyncStorage.setItem('alreadyLaunched', 'true'); // No need to wait for `setItem` to finish, although you might want to handle errors
-        setIsFirstLaunch(true);
-      } else {
-        setIsFirstLaunch(false);
-      }
-    }); // Add some error handling, also you can simply do setIsFirstLaunch(null)
-  
-    GoogleSignin.configure({
-      webClientId: 'YOUR_APP_WEB_CLIENT_ID',
-    });
-  
-  }, []);
+const screenOptionStyle =  {
+  headerTitleAlign: "center",
+        headerStyle: {
+          backgroundColor: "#04446b",
+        },
+        headerTintColor: "#fff",
+        headerTitleStyle: {
+          fontWeight: "bold",
+        },
 
-  if (isFirstLaunch === null) {
-    return null; // This is the 'tricky' part: The query to AsyncStorage is not finished, but we have to present something to the user. Null will just render nothing, so you can also put a placeholder of some sort, but effectively the interval between the first mount and AsyncStorage retrieving your data won't be noticeable to the user. But if you want to display anything then you can use a LOADER here
-  } else if (isFirstLaunch == true) {
-    routeName = 'Onboarding';
-  } else {
-    routeName = 'Login';
-  }
+}
 
+const  HomeStack = () => {
   return (
-    <Stack.Navigator initialRouteName={routeName}>
+    <Stack.Navigator
+      screenOptions={screenOptionStyle}
+    >
       <Stack.Screen
-        name="Onboarding"
-        component={OnboardingScreen}
-        options={{header: () => null}}
+        name="Home"
+        component={Home}
       />
-      <Stack.Screen
-        name="Login"
-        component={LoginScreen}
-        options={{header: () => null}}
-      />
-      <Stack.Screen
-        name="Signup"
-        component={SignupScreen}
-        options={({navigation}) => ({
-          title: '',
-          headerStyle: {
-            backgroundColor: '#f9fafd',
-            shadowColor: '#f9fafd',
-            elevation: 0,
-          },
-          headerLeft: () => (
-            <View style={{marginLeft: 10}}>
-              <FontAwesome.Button 
-                name="long-arrow-left"
-                size={25}
-                backgroundColor="#f9fafd"
-                color="#333"
-                onPress={() => navigation.navigate('Login')}
-              />
-            </View>
-          ),
-        })}
-      />
+    
+    <Stack.Screen
+          name="BookingForm"
+          component={BookingForm}
+        />
     </Stack.Navigator>
+  );
+}
+
+const ContactStack = () => {
+  return (
+  <Stack.Navigator>
+    <Stack.Screen
+          name="ContactUs"
+          component={ContactUS}
+        />  
+  </Stack.Navigator>
+
+  )
+}
+
+const Tab = createBottomTabNavigator();
+
+const TabNavigator = () => {
+  return (
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          if (route.name === "Home") {
+            iconName = focused
+              ? "home"
+              : "home";
+          } else if (route.name === "ContactUs") {
+            iconName = focused ? "ios-call" : "ios-call";
+          }
+
+          // You can return any component that you like here!
+          return <Ionicons name={iconName} size={size} color={color} />
+        },
+      })}
+      tabBarOptions={{
+        activeTintColor: "#04446b",
+        inactiveTintColor: "gray",
+        style: {
+          justifyContent: "space-around",
+          paddingBottom: "1.2%",
+
+          borderTopColor: "rgba(255, 255, 255, 0.35)",
+          borderTopWidth: 0.5,
+        },
+      }}
+    >
+      <Tab.Screen name="Home" component={HomeStack} />
+      <Tab.Screen name="ContactUs" component={ContactStack} />
+    </Tab.Navigator>
   );
 };
 
-export default AuthStack;
+// const StackNavigator = () => {
+//   return(
+//       <Stack.Navigator
+//         screenOptions={{
+//           headerTitleAlign: 'center',
+//           headerStyle: {
+//             backgroundColor: '#56ab2f',
+//           },
+//           headerTintColor: '#fff',
+//           headerTitleStyle: {
+//             fontWeight: 'bold',
+//           },
+//         }}
+
+//       >
+//          <Stack.Screen
+//           name="Welcome"
+//           component={Welcome}
+//           options={{
+//             headerShown: false,
+//           }}
+//         />
+//         <Stack.Screen
+//           name="Login"
+//           component={Login}
+//           options={{
+//             headerShown: false,
+//           }}
+//         /> 
+//         <Stack.Screen
+//           name="Signup"
+//           component={Signup}
+//           options={{
+//             headerShown: false,
+//           }}
+//         />
+//         <Stack.Screen
+//           name="Home"
+//           component={Home}
+//         /> 
+//     </Stack.Navigator>
+//   )
+// }
+
+
+export default TabNavigator
