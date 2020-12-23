@@ -1,6 +1,6 @@
 import React from 'react';
-import {  Text, View,TouchableWithoutFeedback,ScrollView, Button , Keyboard} from 'react-native';
-import { TextInput } from "react-native-paper";
+import {  Text, View,TouchableWithoutFeedback,ScrollView, Keyboard} from 'react-native';
+import { TextInput , Button } from "react-native-paper";
 
 
 
@@ -11,13 +11,12 @@ const BookingForm = ({navigation}) => {
   return (
     
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()} >        
-<View style={styles.bgColor}>
+
   <ScrollView>      
   <View style={styles.container}>
     </View>
      <View>
-          <Text style={styles.bookingFormTText}>Book it fast!! </Text>
-          <Text style={styles.bookingFormTText2}>Do it check before submitting </Text>
+          <Text style={styles.bookingFormText}>Give Your Details </Text>
       <View>
                  
                     <TextInput
@@ -65,7 +64,7 @@ const BookingForm = ({navigation}) => {
                     />
         
                   <View>
-                    <Text style={styles.bookingFormTText3}>Booking date:  </Text>
+                    
                     <TextInput
                       style={styles.input}
                       labelName="facebook"
@@ -78,21 +77,7 @@ const BookingForm = ({navigation}) => {
                     />
                   </View>
                   <View>
-                    <Text style={styles.bookingFormTText3}>Booking time:  </Text>
-                    <TextInput
-                      style={styles.input}
-                      labelName="facebook"
-                      autoCapitalize="none"
-                      placeholder="Enter your booking time"
-                      left={<TextInput.Icon style={styles.
-                      InputIcon}
-                      icon='clock'
-                      />}
-                    />
-                  </View>
-
-                  <View>
-                    <Text style={styles.bookingFormTText3}>Pick up location:  </Text>
+              
                     <TextInput
                       style={styles.input}
                       labelName="PickUp"
@@ -106,7 +91,6 @@ const BookingForm = ({navigation}) => {
                   </View>
 
                   <View>
-                    <Text style={styles.bookingFormTText3}>Destination location:  </Text>
                     <TextInput
                       style={styles.input}
                       labelName="DestinationLocation"
@@ -122,17 +106,17 @@ const BookingForm = ({navigation}) => {
     </View>
 
     <View style={styles.container} >
-        <Button
-         title="Next"
-         
-         color="#842581"           
-        onPress=
-           {() => navigation.navigate('BookingForm2')}
-        />
+    <Button
+        mode="contained"
+        onPress={() => navigation.navigate("Profile")}
+        style={{ width: 120, marginTop: 10 , marginBottom : 10}}
+        color = '#04446b'
+      >
+        Submit
+      </Button>
         </View>
     </View>
     </ScrollView>
-</View>
 </TouchableWithoutFeedback>
   );
 }

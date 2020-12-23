@@ -49,7 +49,7 @@ export default function Login({ navigation }) {
               <Formik
                 initialValues={{ email: "", password: "" }}
                 validationSchema={loginSchema}
-                onSubmit={ () => navigation.navigate("Home")
+                onSubmit={ () => navigation.navigate("TabScreen")
                 }
               >
                 {({ handleChange, handleBlur, handleSubmit, values,errors, touched,
