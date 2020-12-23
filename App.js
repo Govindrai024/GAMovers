@@ -39,79 +39,79 @@ const StackNavigator = () => {
         }}
 
       >
-        {/* <Stack.Screen
+        <Stack.Screen
           name="Welcome"
           component={Welcome}
           options={{
             headerShown: false,
           }}
-        /> */}
-        {/* <Stack.Screen
+        />
+        <Stack.Screen
           name="Login"
           component={Login}
           options={{
             headerShown: false,
           }}
-        /> */}
-        {/* <Stack.Screen
+        /> 
+        <Stack.Screen
           name="Signup"
           component={Signup}
           options={{
             headerShown: false,
           }}
-        /> */}
-        {/* <Stack.Screen
+        />
+        <Stack.Screen
           name="Home"
           component={Home}
           options={{
             headerShown: true,
 
           }}
-        /> */}
+        />
 
-        {/* <Stack.Screen
-          name="Booking Form"
+        <Stack.Screen
+          name="BookingForm"
           component={BookingForm}
           options={{
             headerShown: true,
 
           }}
-        /> */}
-        {/* <Stack.Screen
-          name="Booking Form"
+        />
+         <Stack.Screen
+          name="BookingForm2"
           component={BookingForm2}
-          options={{
-            headerShown: true,
-
-          }}
-        /> */}
-
-        {/* <Stack.Screen
-          name="Profile "
-          component={Profile}
-          options={{
-            headerShown: true,
-
-          }}
-        /> */}
-        
-        <Stack.Screen
-          name="Profile"
-          component={UserProfile}
           options={{
             headerShown: true,
 
           }}
         />
 
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
+          options={{
+            headerShown: true,
+
+          }}
+        /> 
+        
         {/* <Stack.Screen
-          name="Contact Us"
-          component={ContactUs}
+          name="UserProfile"
+          component={UserProfile}
           options={{
             headerShown: true,
 
           }}
         /> */}
+
+         <Stack.Screen
+          name="ContactUs"
+          component={ContactUs}
+          options={{
+            headerShown: true,
+
+          }}
+        /> 
 
 
       </Stack.Navigator>
