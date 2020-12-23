@@ -32,6 +32,9 @@ const  HomeStack = () => {
       <Stack.Screen
         name="Home"
         component={Home}
+        options={{
+          headerShown: false,
+        }}
       />
     
     <Stack.Screen
@@ -48,6 +51,9 @@ const ContactStack = () => {
     <Stack.Screen
           name="ContactUs"
           component={ContactUS}
+          options={{
+            headerShown: false,
+          }}
         />  
   </Stack.Navigator>
 
@@ -56,7 +62,7 @@ const ContactStack = () => {
 
 const Tab = createBottomTabNavigator();
 
-const TabNavigator = () => {
+const TabScreen = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -93,49 +99,53 @@ const TabNavigator = () => {
   );
 };
 
-// const StackNavigator = () => {
-//   return(
-//       <Stack.Navigator
-//         screenOptions={{
-//           headerTitleAlign: 'center',
-//           headerStyle: {
-//             backgroundColor: '#56ab2f',
-//           },
-//           headerTintColor: '#fff',
-//           headerTitleStyle: {
-//             fontWeight: 'bold',
-//           },
-//         }}
+const StackNavigator = () => {
+  return(
+      <Stack.Navigator
+        screenOptions={{
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: '#56ab2f',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
 
-//       >
-//          <Stack.Screen
-//           name="Welcome"
-//           component={Welcome}
-//           options={{
-//             headerShown: false,
-//           }}
-//         />
-//         <Stack.Screen
-//           name="Login"
-//           component={Login}
-//           options={{
-//             headerShown: false,
-//           }}
-//         /> 
-//         <Stack.Screen
-//           name="Signup"
-//           component={Signup}
-//           options={{
-//             headerShown: false,
-//           }}
-//         />
-//         <Stack.Screen
-//           name="Home"
-//           component={Home}
-//         /> 
-//     </Stack.Navigator>
-//   )
-// }
+      >
+         {/* <Stack.Screen
+          name="Welcome"
+          component={Welcome}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{
+            headerShown: false,
+          }}
+        /> 
+        <Stack.Screen
+          name="Signup"
+          component={Signup}
+          options={{
+            headerShown: false,
+          }}
+        /> */}
+        <Stack.Screen
+          name="TabScreen"
+          component={TabScreen}
+          options={{
+            headerShown: false,
+          }}
+
+        /> 
+    </Stack.Navigator>
+  )
+}
 
 
-export default TabNavigator
+export default StackNavigator
