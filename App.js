@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import StackNavigator from './navigation/AuthStack/'
+import StackNavigator from './navigation/AuthStack'
 import {  Provider as PaperProvider } from 'react-native-paper';
 import  AppLoading  from 'expo-app-loading';
 import { useFonts } from 'expo-font';
@@ -37,7 +37,6 @@ function App(props) {
       <NavigationContainer>
         <PaperProvider theme={theme}>
         <StackNavigator/> 
-
         </PaperProvider>
         
       </NavigationContainer>
