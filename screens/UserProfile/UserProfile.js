@@ -27,7 +27,7 @@ const UserProfile = () => {
         <Card style={styles.myCard}>
             <View style={styles.cardContent}>
                 <MaterialIcons
-                    name="email" size={32} color="blue" />
+                    name="email" size={32} color="#04446b" />
                 <Text style={styles.mytext}>React Native Developer</Text>
             </View>
         </Card>
@@ -36,7 +36,7 @@ const UserProfile = () => {
         <Card style={styles.myCard}>
             <View style={styles.cardContent}>
                 <MaterialIcons
-                    name="email" size={32} color="blue" />
+                    name="email" size={32} color="#04446b" />
                 <Text style={styles.mytext}>govindrai024@gmail.com</Text>
             </View>
         </Card>
@@ -45,7 +45,7 @@ const UserProfile = () => {
         <Card style={styles.myCard}>
             <View style={styles.cardContent}>
                 <Entypo
-                    name="phone" size={32} color="blue" />
+                    name="phone" size={32} color="#04446b" />
                 <Text style={styles.mytext}>03363203306</Text>
             </View>
         </Card>
@@ -54,7 +54,7 @@ const UserProfile = () => {
         <Card style={styles.myCard}>
             <View style={styles.cardContent}>
             <MaterialIcons
-                    name="attach-money" size={32} color="blue"/>
+                    name="attach-money" size={32} color="#04446b"/>
                 <Text style={styles.mytext}>Rs: 2 LPA</Text>
             </View>
         </Card>
@@ -84,7 +84,7 @@ const UserProfile = () => {
 
 const theme = {
     colors:{
-        primary:"#006aff"
+        primary:"#04446b"
     }
 
 }

@@ -108,11 +108,11 @@ const BookingForm = ({navigation}) => {
     <View style={styles.container} >
     <Button
         mode="contained"
-        onPress={() => navigation.navigate("Profile")}
+        onPress={() => navigation.navigate('Booking Form2')}
         style={{ width: 120, marginTop: 10 , marginBottom : 10}}
         color = '#04446b'
       >
-        Submit
+       Next
       </Button>
         </View>
     </View>

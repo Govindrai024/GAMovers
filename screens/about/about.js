@@ -17,7 +17,8 @@ const About = ({navigation}) => {
      <View>
           <Button
                 title = "<"
-                onPress={() => navigation.navigate('About')}
+                color="#04446b"
+                onPress={() => navigation.navigate('Home')}
           />
      </View>
      

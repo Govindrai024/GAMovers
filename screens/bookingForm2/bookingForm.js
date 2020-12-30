@@ -8,21 +8,20 @@ import {  Card, Title, Paragraph,Checkbox } from "react-native-paper";
 import  styles  from "../bookingForm/bookingFormStyle";
 import  form2Style  from "./bookingFormStyle";
 
-const BookingForm = ({navigation}) => {
+const BookingForm2 = ({navigation}) => {
 
   const [checked, setChecked] = React.useState(false);
 
   return (
     
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()} >        
-<View style={styles.bgColor}>
+<View>
   <ScrollView>      
   <View style={styles.container}>
     </View>
      <View>
-          <Text style={styles.bookingFormTText}>Book it fast!! </Text>
-          <Text style={styles.bookingFormTText2}>Do it check before submitting </Text>
-      <View>         
+          <Text style={form2Style.bookingFormTText}>Continue.. </Text>
+               <View>         
     </View>
 
     
@@ -34,7 +33,8 @@ const BookingForm = ({navigation}) => {
             <Checkbox
             
             style={form2Style.infoCheck}
-              status={checked ? 'checked' : 'unchecked'}
+                uncheckedColor="blue"
+                status={checked ? 'checked' : 'unchecked'}
                 onPress={() => {
                 setChecked(!checked);
                 }}
@@ -120,7 +120,7 @@ const BookingForm = ({navigation}) => {
           
           icon='camera'
           title="Upload"
-          color="#0575E6"           
+          color="#04446b"           
           onPress=
           {() => navigation.navigate('BookingForm2')}
           />
@@ -128,14 +128,16 @@ const BookingForm = ({navigation}) => {
          <Button
 
               title="Cancel"
-              color="#0575E6"           
+              color="#04446b"           
+              style={{justifyContent:"space-around"}}
               onPress=
               {() => navigation.navigate('BookingForm2')}
         />
         
           <Button
               title="Submit"
-              color="#0575E6"           
+              color="#04446b"           
+              style={{margin:15}}
               onPress=
               {() => navigation.navigate('BookingForm2')}
         />
@@ -152,4 +154,4 @@ const BookingForm = ({navigation}) => {
 
 
 
-export default BookingForm
+export default BookingForm2

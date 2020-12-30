@@ -7,6 +7,7 @@ import Login from '../screens/login/login'
 import Signup from '../screens/signup/SignupScreen'
 import Home from '../screens/home/home'
 import BookingForm from '../screens/bookingForm/bookingForm'
+import BookingForm2 from '../screens/bookingForm2/bookingForm'
 import ContactUS from '../screens/contactUs/ContactUS'
 import UserProfile from '../screens/UserProfile/UserProfile'
 import About from '../screens/about/about'
@@ -88,7 +89,7 @@ const BookingFormStack = () => {
    screenOptions={screenOptionStyle}
   >
     <Stack.Screen
-          name="BookingForm"
+          name="Booking Form"
           component={BookingForm}
           options={{
             headerShown: true,
@@ -116,6 +117,7 @@ const AboutStack = () => {
 
   )
 }
+
 const Tab = createBottomTabNavigator();
 
 const TabScreen = () => {
@@ -157,9 +159,9 @@ const TabScreen = () => {
       }}
     >
       <Tab.Screen name="Home" component={HomeStack} />
+      <Tab.Screen name="Profile" component={UserProfileStack} />
       <Tab.Screen name="Booking Form" component={BookingFormStack} />
       <Tab.Screen name="ContactUs" component={ContactStack} />
-      <Tab.Screen name="Profile" component={UserProfileStack} />
       <Tab.Screen name="About" component={AboutStack} />
     </Tab.Navigator>
   );
@@ -209,6 +211,16 @@ const StackNavigator = () => {
           }}
 
         /> 
+             <Stack.Screen
+          name="Booking Form2"
+          component={BookingForm2}
+          options={{
+            headerShown: true,
+          }}
+
+        /> 
+
+
     </Stack.Navigator>
   )
 }
