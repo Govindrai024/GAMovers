@@ -8,7 +8,10 @@ import Signup from '../screens/signup/SignupScreen'
 import Home from '../screens/home/home'
 import BookingForm from '../screens/bookingForm/bookingForm'
 import ContactUS from '../screens/contactUs/ContactUS'
-import ContactUs from '../screens/contactUs/ContactUS';
+import UserProfile from '../screens/UserProfile/UserProfile'
+import About from '../screens/about/about'
+
+
 const Stack = createStackNavigator();
 
 
@@ -33,7 +36,7 @@ const  HomeStack = () => {
         name="Home"
         component={Home}
         options={{
-          headerShown: false,
+          headerShown: true,
         }}
       />
     
@@ -47,12 +50,14 @@ const  HomeStack = () => {
 
 const ContactStack = () => {
   return (
-  <Stack.Navigator>
+  <Stack.Navigator
+   screenOptions={screenOptionStyle}
+  >
     <Stack.Screen
           name="ContactUs"
           component={ContactUS}
           options={{
-            headerShown: false,
+            headerShown: true,
           }}
         />  
   </Stack.Navigator>
@@ -60,6 +65,57 @@ const ContactStack = () => {
   )
 }
 
+
+const UserProfileStack = () => {
+  return (
+  <Stack.Navigator
+   screenOptions={screenOptionStyle}
+  >
+    <Stack.Screen
+          name="Profile"
+          component={UserProfile}
+          options={{
+            headerShown: true,
+          }}
+        />  
+  </Stack.Navigator>
+
+  )
+}
+const BookingFormStack = () => {
+  return (
+  <Stack.Navigator
+   screenOptions={screenOptionStyle}
+  >
+    <Stack.Screen
+          name="BookingForm"
+          component={BookingForm}
+          options={{
+            headerShown: true,
+          }}
+        />  
+  </Stack.Navigator>
+
+  )
+}
+
+
+const AboutStack = () => {
+  return (
+  <Stack.Navigator
+   screenOptions={screenOptionStyle}
+  >
+    <Stack.Screen
+          name="About"
+          component={About}
+          options={{
+            headerShown: true,
+          }}
+        />  
+  </Stack.Navigator>
+
+  )
+}
 const Tab = createBottomTabNavigator();
 
 const TabScreen = () => {
@@ -75,7 +131,14 @@ const TabScreen = () => {
               : "home";
           } else if (route.name === "ContactUs") {
             iconName = focused ? "ios-call" : "ios-call";
+          } else if (route.name === "Profile") {
+            iconName = focused ? "person" : "person";
+          } else if (route.name === "About") {
+            iconName = focused ? "book" : "book";
+          } else if (route.name === "Booking Form") {
+            iconName = focused ? "pencil" : "heart";
           }
+
 
           // You can return any component that you like here!
           return <Ionicons name={iconName} size={size} color={color} />
@@ -94,7 +157,10 @@ const TabScreen = () => {
       }}
     >
       <Tab.Screen name="Home" component={HomeStack} />
+      <Tab.Screen name="Booking Form" component={BookingFormStack} />
       <Tab.Screen name="ContactUs" component={ContactStack} />
+      <Tab.Screen name="Profile" component={UserProfileStack} />
+      <Tab.Screen name="About" component={AboutStack} />
     </Tab.Navigator>
   );
 };

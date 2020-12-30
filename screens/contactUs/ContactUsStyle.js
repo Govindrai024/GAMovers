@@ -1,43 +1,21 @@
-import { StyleSheet , Dimensions } from 'react-native';
+import { StyleSheet, Dimensions } from "react-native";
 
 const { width, height } = Dimensions.get("screen");
 
-const styles = StyleSheet.create({ 
-  container:{
-    flex:1,
-    backgroundColor:"#fff",
-    alignItems:"center",
-    justifyContent:"center",
-  
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
-  home: {
-    fontSize: 25,
-    fontWeight: "bold",
-    marginLeft:20,
-    marginTop:20,
-    marginBottom:10,
-    
 
-  },
-  aboutText:{
-    fontFamily:'Nunito-Bold',
-    justifyContent: "space-between",
-    fontSize:18,
-    marginRight:20,
-    marginLeft:20,
-    padding:10,
-    borderWidth: 1,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
-    borderTopWidth:0,
-    borderBottomWidth:0,
-  },
   input: {
     // marginTop: 2,
-    marginBottom: 2,
-    marginRight: 5,
-    width: width / 3,
-    height: height / 14,
+    marginBottom: 5,
+    marginRight: 10,
+    marginLeft: 15,
+    width: width / 1.1,
+    height: height / 16,
     backgroundColor: "#f5f5f5",
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
@@ -51,13 +29,20 @@ const styles = StyleSheet.create({
     width: 40,
     height: "160%",
   },
-  btn:{
-    alignItems:"center",
-    justifyContent:"center",
+  bookingFormText: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginLeft:width / 4.5,
+    marginTop: 30,
+    marginBottom: 20,
+    textAlign: "center",
+    borderBottomColor : '#d3d3d3',
+    borderBottomWidth: 1,
+    paddingBottom : 5,
+    width : 200,
+    color : 'gray'
   },
-  msg:{
-    height: height / 5,
-  }
+ 
 });
-  
-export default styles  
+
+export default styles;

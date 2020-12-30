@@ -1,65 +1,72 @@
 import React from 'react';
-import {  Text, View, Button } from 'react-native';
-import { TextInput } from "react-native-paper";
+import {  Text, View,TouchableWithoutFeedback,ScrollView, Keyboard} from 'react-native';
+import { Ionicons } from "@expo/vector-icons";
+import { TextInput , Button } from "react-native-paper";
 
 //Styles
 import  styles  from "./ContactUsStyle";
 
 const ContactUs = ({navigation}) => {
   return (
-    <View style={styles.container}>
-      <View>
-        <Text style={styles.home}>We are available for you.</Text>
-      </View>
+    
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()} >        
 
-      <View style={styles.aboutText}>
-          <View>
-          <TextInput
-                style={styles.input}
-                labelName="UserName"
-                autoCapitalize="none"      
-                placeholder="Enter username"
-                left={<TextInput.Icon style={styles.InputIcon}
-                name="person"         
-                      />}
-                    />
-
-
-        <TextInput
-                style={styles.input}
-                labelName="email"
-                autoCapitalize="none"      
-                placeholder="Enter email address"
-                left={<TextInput.Icon style={styles.InputIcon}
-                name="email"         
-                      />}
-                    />      
-
-        <TextInput
-                style={[styles.input,styles.msg]}
-                labelName="msg"
-                autoCapitalize="none"      
-                outlin="none"
-                placeholder="Typ your message here....."
-                left={<TextInput.Icon style={styles.InputIcon}
-                name="message"  
-                
-                      />}
-                    />            
-
-          </View>
-      </View>
-      <View style={styles.btn}>
-          <Button
-                title = "Contact Us"
-                onPress={() => navigation.navigate('ContactUs')}
-          />
-     </View>
-     
+  <ScrollView>      
+  <View style={styles.container}>
     </View>
+     <View>
+          <Text style={styles.bookingFormText}>Give Your Details </Text>
+      <View>
+                 
+           <TextInput
+              style={styles.input}
+              labelName="Full name"
+              autoCapitalize="none"
+              placeholder="Enter your full name"
+              left={<TextInput.Icon style={styles.
+              InputIcon}
+              icon='person'
+         />}
+          />
+
+         <TextInput
+           style={styles.input}
+           labelName="EmailAddress"
+           autoCapitalize="none"
+           placeholder="Enter your email address"
+           left={<TextInput.Icon style={styles.
+           InputIcon}
+           icon='email'
+           />}
+           />
+
+        <TextInput
+           style={styles.input}
+           labelName="Msg"
+           autoCapitalize="none"
+           placeholder="Enter your messsage.."
+           left={<TextInput.Icon style={styles.
+           InputIcon}
+           icon='message'
+           />}
+           />
+    </View>
+
+    <View style={styles.container} >
+    <Button
+        mode="contained"
+        onPress={() => navigation.navigate("Profile")}
+        style={{ width: 120, marginTop: 10 , marginBottom : 10}}
+        color = '#04446b'
+      >
+        Submit
+      </Button>
+        </View>
+    </View>
+    </ScrollView>
+</TouchableWithoutFeedback>
   );
 }
 
 
-
-export default ContactUs 
+export default ContactUs
