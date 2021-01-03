@@ -6,7 +6,7 @@ import Heading from "../../components/heading/heading";
 
 //Styles
 import  styles  from "./homeStyle";
-
+import textStyle from '../../components/heading/headingStyle'
 
 // img https://image.freepik.com/free-vector/moving-new-apartment-concept_74855-7628.jpg
 
@@ -37,9 +37,7 @@ const Home = ({navigation}) => {
 
     <View>
          <View>
-            <Heading 
-        
-            />
+              <Text style={textStyle.HomeText}>Book Your Services</Text>
           <View>
         
           {/* cards for booking form and transport in vertical */}
@@ -70,7 +68,7 @@ const Home = ({navigation}) => {
     
        <View>
          <View>
-            <Heading />
+         <Text style={textStyle.HomeText}>Jobs And Oppertunities</Text>
           <View>
         
             <View style={styles.ServicesCard}>
@@ -96,7 +94,7 @@ const Home = ({navigation}) => {
 
         <View>
          <View>
-            <Heading />
+         <Text style={textStyle.HomeText}>News And Updates</Text>
           <View>
         
             <View style={styles.ServicesCard}>

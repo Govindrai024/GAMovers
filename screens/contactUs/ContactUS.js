@@ -16,6 +16,9 @@ const ContactUs = ({navigation}) => {
     </View>
      <View>
           <Text style={styles.bookingFormText}>Give Your Details </Text>
+          <Paper elevation={0} />
+          <Paper />
+          <Paper elevation={3} />
       <View>
                  
            <TextInput

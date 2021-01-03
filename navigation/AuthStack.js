@@ -9,7 +9,8 @@ import Home from '../screens/home/home'
 import BookingForm from '../screens/bookingForm/bookingForm'
 import BookingForm2 from '../screens/bookingForm2/bookingForm'
 import ContactUS from '../screens/contactUs/ContactUS'
-import UserProfile from '../screens/UserProfile/UserProfile'
+import Profile from '../screens/UserProfile/UserProfile'
+import UserProfile from '../screens/profile/profile'
 import About from '../screens/about/about'
 
 
@@ -214,6 +215,14 @@ const StackNavigator = () => {
              <Stack.Screen
           name="Booking Form2"
           component={BookingForm2}
+          options={{
+            headerShown: true,
+          }}
+
+        /> 
+         <Stack.Screen
+          name="Customer Profile"
+          component={Profile}
           options={{
             headerShown: true,
           }}

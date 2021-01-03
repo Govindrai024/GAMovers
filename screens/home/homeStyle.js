@@ -8,19 +8,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  HomeText: {
-    fontSize: 20,
-    fontWeight: "bold",
-    marginLeft:width / 12.5,
-    marginTop: 30,
-    marginBottom: 20,
-    textAlign: "center",
-    borderBottomColor : '#d3d3d3',
-    borderBottomWidth: 1,
-    paddingBottom : 5,
-    width : 200,
-    color : 'gray'
-  },
   Silder:{
     width:"100%",
     height:220,
@@ -64,8 +51,15 @@ const styles = StyleSheet.create({
     color:"blue" 
   },
   ImgSet:{
-    height:"80%"
-  }
+    flex: 1,
+    overflow: 'hidden',
+    alignItems: 'center',
+    backgroundColor: 'blue',
+    position: 'relative',
+    margin: 5,
+    padding:5,
+    
+  },
  
 });
 

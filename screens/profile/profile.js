@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image,  FlatList } from 'react-native';
 import { Card,FAB } from 'react-native-paper'
 
 
-const Home = () => {
+const Home = ({navigation}) => {
     const data = [
         {id:1,name:"Govind Rai",position:"Web Developer"},
         {id:2,name:"Rai",position:"Co-Fonunder"},
@@ -19,39 +19,20 @@ const Home = () => {
 
     ] 
 
-    // This throungh map
-//     const raederList = data.map((item) =>{
-//         return (
-//             <Card style={styles.mycard}>
-//             <View style={styles.cardView}>
-//                 <Image
-//                    style={{ width: 60, height: 60, borderRadius: 30 }}
-//                     source={{ uri: "https://pbs.twimg.com/profile_images/1225687863439712256/wFtOuQx8_400x400.jpg" }}
-//                         />
-    
-//              <View style={{marginLeft:20}}>
-//                 <Text style={styles.text}> {item.id}</Text>
-//                 <Text style={styles.text}> {item.name}</Text>
-//                 <Text style={styles.text}> {item.position}</Text>
-//             </View>
-//            </View>
-    
-//             </Card>
-//         )    
-// })
 
-// here we are using flat list
 
     const renderList = ((item) =>{
         return (
-            <Card style={styles.mycard } >
+            <Card style={styles.mycard } 
+             onPress={() => navigation.navigate('Customer Profile')}
+            >
             <View style={styles.cardView}>
                 <Image
                    style={{ width: 60, height: 60, borderRadius: 30 }}
                     source={{ uri: "https://pbs.twimg.com/profile_images/1225687863439712256/wFtOuQx8_400x400.jpg" }}
                         />
     
-             <View style={{marginLeft:20}} >
+             <View style={{marginLeft:20}}>
                 <Text style={styles.text}> {item.id}</Text>
                 <Text style={styles.text}> {item.name}</Text>
                 <Text style={styles.text}> {item.position}</Text>
