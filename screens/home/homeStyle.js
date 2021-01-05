@@ -25,23 +25,25 @@ const styles = StyleSheet.create({
     fontWeight:"normal",
     color:"#663399" 
   },
-  ServicesCardDesign : {
+  ServicesCardDesign: {
     height:100,
     width:'40%',
     marginLeft:10,
     marginRight:10,
-    borderRadius:0.1,
-    borderColor:'blue',
-    
-
+    borderTopEndRadius:10,
+    borderTopLeftRadius:10,
+    borderBottomLeftRadius:15,
+    borderBottomRightRadius:15,
   },
   ServicesCardNews:{
     height:90,
     width:'90%',
     marginLeft:10,
     marginRight:10,
-    borderRadius:0.1,
-    borderColor:'blue',
+    borderTopEndRadius:10,
+    borderTopLeftRadius:10,
+    borderBottomLeftRadius:15,
+    borderBottomRightRadius:15,
   },
   ServicesCardNewsText:{
     fontSize:18,
@@ -54,11 +56,8 @@ const styles = StyleSheet.create({
     flex: 1,
     overflow: 'hidden',
     alignItems: 'center',
-    backgroundColor: 'blue',
-    position: 'relative',
-    margin: 5,
-    padding:5,
-    
+    backgroundColor: '#E2E2E2',
+    padding:10,
   },
  
 });

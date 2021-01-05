@@ -3,6 +3,8 @@ import {  Text, View,TouchableWithoutFeedback,ScrollView, Keyboard} from 'react-
 import { TextInput , Button } from "react-native-paper";
 
 
+//logo
+const Logo = require('../../assets/icon/user.png')
 
 //Styles
 import  styles  from "./bookingFormStyle";
@@ -26,7 +28,7 @@ const BookingForm = ({navigation}) => {
                       placeholder="Enter your full name"
                       left={<TextInput.Icon style={styles.
                       InputIcon}
-                      icon='person'
+                      icon={Logo}
                       />}
                     />
                    

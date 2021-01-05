@@ -174,7 +174,7 @@ const StackNavigator = () => {
         screenOptions={{
           headerTitleAlign: 'center',
           headerStyle: {
-            backgroundColor: '#56ab2f',
+            backgroundColor: '#04446b',
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
@@ -183,7 +183,7 @@ const StackNavigator = () => {
         }}
 
       >
-         {/* <Stack.Screen
+         <Stack.Screen
           name="Welcome"
           component={Welcome}
           options={{
@@ -203,7 +203,7 @@ const StackNavigator = () => {
           options={{
             headerShown: false,
           }}
-        /> */}
+        />
         <Stack.Screen
           name="TabScreen"
           component={TabScreen}

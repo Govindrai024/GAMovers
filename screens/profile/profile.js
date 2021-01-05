@@ -28,7 +28,7 @@ const Home = ({navigation}) => {
             >
             <View style={styles.cardView}>
                 <Image
-                   style={{ width: 60, height: 60, borderRadius: 30 }}
+                   style={{ width: 60, height: 60, borderRadius: 30, margin: 10 }}
                     source={{ uri: "https://pbs.twimg.com/profile_images/1225687863439712256/wFtOuQx8_400x400.jpg" }}
                         />
     
@@ -59,8 +59,8 @@ const Home = ({navigation}) => {
                 style={styles.fab}
                 small={false}
                 icon="plus"
-                theme={{colors:{accent:"green"}}}
-                onPress={() => console.log('Pressed')}
+                theme={{colors:{accent:"#04446b"}}}
+                onPress={() => alert('Pressed')}
   />
         </View>
     )

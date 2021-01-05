@@ -1,13 +1,10 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
-const { width, height } = Dimensions.get("screen");
-
 const styles = StyleSheet.create({ 
   infocontainer:{
     fontSize:20,
     marginLeft:20,
     marginRight:10,
-    fontFamily:"Nunito-light",
     paddingBottom:10,
     justifyContent:'center',
     alignItems:'center'

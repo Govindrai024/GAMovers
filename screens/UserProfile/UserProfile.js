@@ -27,7 +27,7 @@ const UserProfile = () => {
         <Card style={styles.myCard}>
             <View style={styles.cardContent}>
                 <MaterialIcons
-                    name="email" size={32} color="#04446b" />
+                    name="person" size={32} color="#04446b" />
                 <Text style={styles.mytext}>React Native Developer</Text>
             </View>
         </Card>
@@ -37,7 +37,7 @@ const UserProfile = () => {
             <View style={styles.cardContent}>
                 <MaterialIcons
                     name="email" size={32} color="#04446b" />
-                <Text style={styles.mytext}>govindrai024@gmail.com</Text>
+                <Text style={styles.mytext}>abc@yahoo.com</Text>
             </View>
         </Card>
 
@@ -46,7 +46,7 @@ const UserProfile = () => {
             <View style={styles.cardContent}>
                 <Entypo
                     name="phone" size={32} color="#04446b" />
-                <Text style={styles.mytext}>03363203306</Text>
+                <Text style={styles.mytext}>+32424354534</Text>
             </View>
         </Card>
 
@@ -65,14 +65,14 @@ const UserProfile = () => {
           icon="account-edit"
           mode="contained"
           theme={theme}
-          onPress={() => console.log('Pressed')}>
+          onPress={() => alert('Pressed')}>
                 Edit
       </Button>
       <Button 
           icon="delete"
           mode="contained"
           theme={theme}
-          onPress={() => console.log('Pressed')}>
+          onPress={() => alert('Pressed')}>
                 Fire Employee
       </Button>
         </View>

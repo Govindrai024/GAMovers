@@ -49,7 +49,7 @@ const Home = ({navigation}) => {
                       source={{ uri: 'https://www.animatedimages.org/data/media/1373/animated-mover-image-0034.gif'}} 
 
                       />
-                  <Text style={styles.ServicesCardText}>Book a service</Text>
+                  <Text style={styles.ServicesCardText}>Book a Service</Text>
                     
             </Card>
               
@@ -68,7 +68,7 @@ const Home = ({navigation}) => {
     
        <View>
          <View>
-         <Text style={textStyle.HomeText}>Jobs And Oppertunities</Text>
+         <Text style={textStyle.HomeText}>Oppertunities</Text>
           <View>
         
             <View style={styles.ServicesCard}>
@@ -99,9 +99,9 @@ const Home = ({navigation}) => {
         
             <View style={styles.ServicesCard}>
             <Card style={styles.ServicesCardNews}>
-                    <Text  style={styles.ServicesCardNewsText}> GA Movers announced multiple postions.. </Text>
-                    <Text  style={styles.ServicesCardNewsText}> GA Movers offers multiple Jos oppertunities.. </Text>
-                    <Text  style={styles.ServicesCardNewsText}> GA Movers goin to invite for openning ceremony... </Text>
+                    <Text  style={styles.ServicesCardNewsText}> GA Movers announced multiple positions.. </Text>
+                    <Text  style={styles.ServicesCardNewsText}> GA Movers offers multiple Jobs oppertunities.. </Text>
+                    <Text  style={styles.ServicesCardNewsText}> GA Movers going to invite for openning ceremony... </Text>
             </Card>
               
           
@@ -110,16 +110,7 @@ const Home = ({navigation}) => {
         </View>
         </View>
 
-          {/* <View style={styles.container} >
-          <Button
-              mode="contained"
-              onPress={() => navigation.navigate("Profile")}
-              style={{ width: 120, marginTop: 10 , marginBottom : 10}}
-              color = '#04446b'
-            >
-              Submit
-            </Button>
-              </View> */}
+
     </View>
     </View>
     </View>

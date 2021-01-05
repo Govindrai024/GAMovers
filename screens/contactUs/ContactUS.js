@@ -1,10 +1,12 @@
 import React from 'react';
 import {  Text, View,TouchableWithoutFeedback,ScrollView, Keyboard} from 'react-native';
-import { Ionicons } from "@expo/vector-icons";
 import { TextInput , Button } from "react-native-paper";
 
 //Styles
 import  styles  from "./ContactUsStyle";
+
+//logo
+const Logo = require('../../assets/icon/user.png')
 
 const ContactUs = ({navigation}) => {
   return (
@@ -16,9 +18,6 @@ const ContactUs = ({navigation}) => {
     </View>
      <View>
           <Text style={styles.bookingFormText}>Give Your Details </Text>
-          <Paper elevation={0} />
-          <Paper />
-          <Paper elevation={3} />
       <View>
                  
            <TextInput
@@ -28,7 +27,7 @@ const ContactUs = ({navigation}) => {
               placeholder="Enter your full name"
               left={<TextInput.Icon style={styles.
               InputIcon}
-              icon='person'
+              icon={Logo}
          />}
           />
 

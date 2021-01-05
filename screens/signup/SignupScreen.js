@@ -16,6 +16,9 @@ import signupStyles from "./SignupStyle";
 import Box from "../../components/box/Box";
 import Container from "../../components/container/Container";
 
+//logo
+const Logo = require('../../assets/icon/user.png')
+
 const loginSchema = yup.object().shape({
   name : yup.string().required(),
   email: yup.string().email("Invalid email").required("Required"),
@@ -74,7 +77,7 @@ export default function Signup({ navigation }) {
                         left={
                           <TextInput.Icon
                             style={signupStyles.InputIcon}
-                            name="name"
+                            name={Logo}
                           />
                         }
                       />
