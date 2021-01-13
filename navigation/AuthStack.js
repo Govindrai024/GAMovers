@@ -1,6 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Ionicons } from "@expo/vector-icons";
 import Welcome from '../screens/welcome/Welcome'
 import Login from '../screens/login/login'
@@ -168,6 +169,20 @@ const TabScreen = () => {
   );
 };
 
+
+const Drawer = createDrawerNavigator();
+
+const DrawerScreen = () => {
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  );
+}
+
 const StackNavigator = () => {
   return(
       <Stack.Navigator
@@ -183,7 +198,7 @@ const StackNavigator = () => {
         }}
 
       >
-         <Stack.Screen
+         {/* <Stack.Screen
           name="Welcome"
           component={Welcome}
           options={{
@@ -203,15 +218,25 @@ const StackNavigator = () => {
           options={{
             headerShown: false,
           }}
-        />
+        /> */}
         <Stack.Screen
-          name="TabScreen"
+          name="Drawer"
           component={TabScreen}
           options={{
             headerShown: false,
           }}
 
         /> 
+
+        <Stack.Screen
+          name="TabScreen"
+          component={DrawerScreen}
+          options={{
+            headerShown: false,
+          }}
+
+        /> 
+
              <Stack.Screen
           name="Booking Form2"
           component={BookingForm2}
