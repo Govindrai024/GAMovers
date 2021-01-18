@@ -2,6 +2,7 @@ import React from 'react';
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from "@expo/vector-icons";
 import Welcome from '../screens/welcome/Welcome'
 import Login from '../screens/login/login'
@@ -176,8 +177,8 @@ const DrawerScreen = () => {
   return (
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={HomeScreen} />
-        <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+        <Drawer.Screen name="Home" component={HomeStack} />
+        <Drawer.Screen name="Notifications" component={UserProfileStack} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
@@ -232,7 +233,7 @@ const StackNavigator = () => {
           name="TabScreen"
           component={DrawerScreen}
           options={{
-            headerShown: false,
+            headerShown: true,
           }}
 
         /> 
